@@ -1,11 +1,12 @@
+import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv()
 
 Client = OpenAI(
-    api_key="***REMOVED***",
-    base_url="https://generativelanguage.googleapis.com/v1beta/"
+    api_key=os.environ.get("OPENAI_API_KEY"),
+    base_url=os.environ.get("OPENAI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/"),
 )
 # directly giving instructions to the model
 SYSTEM_PROMPT="You will be ans only and only coding ques and if user ask some other things then ans. Do not ans anything "

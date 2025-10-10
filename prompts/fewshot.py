@@ -1,11 +1,12 @@
+import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv()
 
 Client = OpenAI(
-    api_key="***REMOVED***",
-    base_url="https://generativelanguage.googleapis.com/v1beta/"
+    api_key=os.environ.get("OPENAI_API_KEY"),
+    base_url=os.environ.get("OPENAI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/"),
 )
 # Few short prompting instructions to the model
 SYSTEM_PROMPT="""
