@@ -4,7 +4,7 @@ from openai import OpenAI
 load_dotenv()
 
 Client = OpenAI(
-    
+     api_key=os.environ.get("OPENAI_API_KEY"),
 )
 
 response = Client.chat.completions.create(

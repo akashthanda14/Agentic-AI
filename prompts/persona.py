@@ -1,4 +1,5 @@
 # Persona Based Prompting 
+import os
 from dotenv import load_dotenv
 from openai import OpenAI
 import json
@@ -6,7 +7,7 @@ import json
 load_dotenv()
 
 Client = OpenAI(
-    api_key="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"
+     api_key=os.environ.get("OPENAI_API_KEY"),
 )
 
 SYSTEM_PROMPT="""

@@ -10,7 +10,7 @@ load_dotenv()
 # ⚠️ Normally, you should use `api_key=os.getenv("OPENAI_API_KEY")`
 # to keep your key secret, but here it’s hardcoded (not recommended in production)
 Client = OpenAI(
-    api_key="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",
+    
     # base_url="https://generativelanguage.googleapis.com/v1beta/"  # optional base URL (commented out)
 )
 
