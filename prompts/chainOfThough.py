@@ -8,7 +8,6 @@ load_dotenv()
 # Load credentials from environment for safety. Do not hard-code secrets in source.
 Client = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
-    base_url=os.environ.get("OPENAI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/"),
 )
 # Few short prompting instructions to the model
 SYSTEM_PROMPT="""
@@ -50,7 +49,7 @@ USER_PROMPT="Write a code in Javascript to print n numbers"
 
 response = Client.chat.completions.create(
     response_format={"type":"json_object"},
-    model="gemini-2.5-flash",
+    model="gpt-4o",
     messages=[
         {"role":"user" , "content":USER_PROMPT },
         {"role":"system" , "content" : SYSTEM_PROMPT},
